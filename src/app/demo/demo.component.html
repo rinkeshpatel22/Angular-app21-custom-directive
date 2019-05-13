@@ -1,0 +1,16 @@
+<h3>Custom Directive Example</h3>
+
+<p>
+  <span>Country: </span>
+  <select (change)="selectedCountry = $event.target.value">
+    <option value="">Select Country</option>
+    <option *ngFor="let country of countryList" value="{{country}}">
+      {{country}}
+    </option>
+  </select>
+</p>
+
+<p>
+  <span>Contact: </span>
+  <input appCountryCode [countryName]="selectedCountry" placeholder="Enter Contact number">
+</p>
